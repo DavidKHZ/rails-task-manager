@@ -1,0 +1,6 @@
+<h1>Edit task : "<%= @task.title %>"</h1>
+
+<%= render "form", task: @task %>
+
+<p><a href="/tasks/<%= @task.id %>"><i class="fa-solid fa-angles-left"></i> Back to task description</a></p>
+<p><a href="/tasks"><i class="fa-solid fa-angles-left"></i> Back to list</a></p>

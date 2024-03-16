@@ -6,6 +6,9 @@
     <li>
       <%= check_box_tag task.title, task.id, task.completed, {id: task.id} %>
       <a href="tasks/<%= task.id %>"><%= task.title %></a>
+      <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-regular fa-trash-can"></i>
+      <% end %>
     </li>
   <% end %>
   </ul>

@@ -1,17 +1,17 @@
 <h1>Tasks</h1>
 
 <% if (@tasks.length > 0) %>
-  <ul>
+  <ul class="my-0 py-0 border-top border-bottom">
   <% @tasks.each do |task| %>
-    <li>
-      <p>
-      <%= check_box_tag task.title, task.id, task.completed, {id: task.id, disabled: :true} %>
-      <span> </span>
-      <a href="tasks/<%= task.id %>"><%= task.title %></a>
-      <span> </span>
-      <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-        <i class="fa-regular fa-trash-can"></i>
-      <% end %>
+    <li class="d-flex align-items-center my-2">
+      <p class="my-0 py-0">
+        <%= check_box_tag task.title, task.id, task.completed, {id: task.id, disabled: :true} %>
+        <span> </span>
+        <a href="tasks/<%= task.id %>"><%= task.title %></a>
+        <span> </span>
+        <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
       </p>
     </li>
   <% end %>
@@ -19,5 +19,4 @@
 <% else %>
   <%= "No task to be displayed at the moment" %>
 <% end %>
-
 <p><a href="tasks/new"><i class="fa-solid fa-plus"></i> Add a new task</a></p>

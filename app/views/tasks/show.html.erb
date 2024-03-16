@@ -1,8 +1,12 @@
 <h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
-<p>
-  <%= check_box_tag @task.title, @task.id, @task.completed, {id: @task.id, disabled: :true} %>
-  The task is<%= " not yet" unless @task.completed %> completed</p>
+
+<div class="container">
+  <p class="ps-3 border border-info border-2 bg-light"><%= @task.details %></p>
+  <p>
+    <%= check_box_tag @task.title, @task.id, @task.completed, {id: @task.id, disabled: :true} %>
+    The task is<%= " not yet" unless @task.completed %> completed</p>
+</div>
+
 <p><a href="/tasks/<%= @task.id %>/edit"><i class="fa-solid fa-pen"></i> Edit task</a></p>
 
 <%= render "back_to_list", task: @task %>

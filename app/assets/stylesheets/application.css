@@ -14,8 +14,13 @@
  *= require_self
  */
 
- ul {
+ul {
   list-style-type: none;
+}
+
+li {
+  display: flex;
+  /* justify-content: space-between; */
 }
 
 a {

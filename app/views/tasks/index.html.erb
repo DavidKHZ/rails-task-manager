@@ -5,10 +5,12 @@
   <% @tasks.each do |task| %>
     <li>
       <%= check_box_tag task.title, task.id, task.completed, {id: task.id} %>
-      <%= task.title %>
+      <a href="tasks/<%= task.id %>"><%= task.title %></a>
     </li>
   <% end %>
   </ul>
 <% else %>
   <%= "No task to be displayed at the moment" %>
 <% end %>
+
+<p><a href="tasks/new"><i class="fa-solid fa-plus"></i> Add a new task</a></p>
